@@ -1,6 +1,4 @@
-# WarsawJS Slides: Template
-
-![Logo](/pictures/logo/logo-light.png)
+# WarsawJS Angular2: first steps
 
 ---
 
