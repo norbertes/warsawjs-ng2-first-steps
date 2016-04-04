@@ -55,6 +55,7 @@
     <section class="slide">
         <h2>Quick votes part 1:</h2>
         <ul>
+            <li>Who have worked with ng1?</li>
             <li>Who have made hello world in ng2?</li>
             <li>Who have worked with ng2 in some project?</li>
         </ul>
@@ -113,12 +114,61 @@
         <li>No more fancy abstractions (&, =, @)</li>
         <li>No more $digest loop or $scope</li>
         <li>Google know how to roll</li>
-        <li>Ng2 = ng1 - fancy abstractions - bad programming practices</li>
+        <li>Ng2 = Ng1 - fancy abstractions - bad programming practices</li>
       </ul>
     </section>
 
     <section class="slide">
       <h2 class="shout">Angular2 syntax</h2>
+    </section>
+
+    <section class="slide prism">
+      <h2>Getter</h2>
+      <pre style="font-size: 14px;" class="language-javascript line-numbers">
+          <code>
+@Component({
+  selector: 'play-button',
+  template: '<\button class="play-button"
+                      (click)="togglePlay()">
+             <\/button>'
+})
+export class PlayButton {
+  constructor(private el: ElementRef) {}
+  ngAfterViewInit() {
+    this.audio = this.el.nativeElement.querySelector('audio')
+  }
+  togglePlay() {
+    this.audio.play();
+  }
+}
+          </code>
+      </pre>
+    </section>
+
+    <section class="slide prism">
+      <h2>Setter</h2>
+      <pre style="font-size: 14px;" class="language-javascript line-numbers">
+          <code>
+@Component({
+  selector: 'album-list',
+  pipes: [PhraseFilter],
+  template: '<\album-item *ngFor="#album of searchResults.albums.items
+                                  | phraseFilter:'name':filterPhrase"
+                          [item]="album">
+             <\/album-item>'
+})
+export class PlayButton {
+  constructor(private searchService: SearchService) {}
+  getData(phrase:string = '') {
+    this.searchService.getResults(phrase)
+    .subscribe(
+      response => this.searchResults = response,
+      error => console.log(error)
+    );
+  }
+}
+          </code>
+      </pre>
     </section>
 
     <section class="slide">

@@ -15,7 +15,7 @@
 }
 
 .slide.prism pre[class*="language-"] code {
-    line-height: 50px;
+    line-height: 30px;
 }
 
 .slide.prism pre[class*="language-"].line-numbers {
