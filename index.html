@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>WarsawJS Slides: Template</title>
+    <title>WarsawJS Angular2: First Steps</title>
 
     <meta charset="utf-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -28,48 +28,97 @@
         </div>
         <div class="details">
             <!-- 1. Avatar -->
-            <img src="pictures/fake-speaker-avatar.jpg" alt="Speaker"/>
+            <img src="pictures/rome.jpg"
+                 alt="Norbert Sienkiewicz"
+                 width="200"
+                 height="200"
+            />
 
             <!-- 2. Speaker -->
-            <h2>Speaker name</h2>
+            <h2>Norbert Sienkiewicz</h2>
 
             <!-- 3. Presentation title -->
-            <h2><strong>"WarsawJS Slides: Template"</strong></h2>
+            <h2><strong>"Angular2: First Steps"</strong></h2>
 
             <!-- 4. Presentation date -->
-            <h2>XXXX-XX-XX</h2>
+            <h2>2016-04-13</h2>
 
             <!-- 5. Contact the speaker -->
-            <h2><a href="http://twitter.com/speaker">@speaker</a></h2>
+            <h2>
+              <a href="https://twitter.com/nsienkiewicz" target="_blank">
+                @nsienkiewicz
+              </a>
+            </h2>
         </div>
     </section>
 
     <section class="slide">
-        <h2>Please update slides:</h2>
+        <h2>Quick votes part 1:</h2>
         <ul>
-            <li>rename project at <mark>GitHub</mark> with snake-case convention</li>
-            <li><mark>description</mark> and <mark>link</mark> on GitHub repository profile</li>
-            <li>link to <mark>"Fork me on GitHub"</mark> on the bottom of document</li>
-            <li>setup presentation title in
-                <ul>
-                    <li><mark>&lt;title&gt;</mark> tag on the top of document in <mark>&lt;head&gt;</mark> tag</li>
-                    <li><mark>README.md</mark> file</li>
-                    <li><mark>&lt;h1&gt;</mark> tag at <mark>&lt;header&gt;</mark> tag on the top of document</li>
-                </ul>
-            </li>
+            <li>Who have made hello world in ng2?</li>
+            <li>Who have worked with ng2 in some project?</li>
         </ul>
     </section>
 
     <section class="slide">
-        <h2>List Navigation</h2>
+        <h2>Agenda</h2>
         <ol>
-            <li>Ennui keffiyeh thundercats</li>
-            <li class="next">Jean shorts biodiesel</li>
-            <li class="next">Terry richardson, swag blog</li>
-            <li class="next">Locavore umami vegan helvetica</li>
-            <li class="next">Fingerstache kale chips</li>
+            <li class="next">TypeScript</li>
+            <li class="next">Angular2 dependencies</li>
+            <li class="next">Angular2 main elements</li>
+            <ol>
+              <li class="next">New syntax</li>
+              <li class="next">Webcomponents</li>
+              <li class="next">Observables</li>
+              <li class="next">Change detection</li>
+            </ol>
+            <li class="next">Issues</li>
+            <li class="next">Summary</li>
         </ol>
-        <p class="next">Before they sold out master</p>
+    </section>
+
+    <section class="slide">
+      <h2>TypeScript</h2>
+      <ul>
+        <li>Typed superset of JavaScript</li>
+        <li>Better static verification of code</li>
+        <li>It's easier to find a bug (also harder to get one)</li>
+        <li>You're writing more describing itself code</li>
+        <li>It's an option</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>TypeScript - support</h2>
+      <img src="pictures/transpilators_compare.png"
+           width="100%"
+      />
+    </section>
+
+    <section class="slide">
+      <h2>Angular2 dependencies</h2>
+      <ul>
+        <li>RxJS</li>
+        <li>Zones</li>
+        <li>Reflect-metadata</li>
+        <li>ES6-shim</li>
+        <li>ES6-promise</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Y Angular2?</h2>
+      <ul>
+        <li>Many things has changed in interwebs since 2010</li>
+        <li>No more fancy abstractions (&, =, @)</li>
+        <li>No more $digest loop or $scope</li>
+        <li>Google know how to roll</li>
+        <li>Ng2 = ng1 - fancy abstractions - bad programming practices</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout">Angular2 syntax</h2>
     </section>
 
     <section class="slide">
@@ -323,7 +372,7 @@
     <div class="progress"></div>
 
     <footer class="badge">
-        <a href="https://github.com/warsawjs/warsawjs-slides-template">Fork me on GitHub</a>
+        <a href="https://github.com/norbertes/warsawjs-ng2-first-steps">Fork me on GitHub</a>
     </footer>
 
     <footer class="badge badge-down">
