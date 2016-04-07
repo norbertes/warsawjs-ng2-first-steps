@@ -242,15 +242,80 @@ export class Navbar {
       </ul>
     </section>
 
-    <section class="slide">
+    <section class="slide prism">
       <h2>Shadow DOM</h2>
+        <li>Increasing reusability of components</li>
+        <li>ViewEncapsulation (Emulated, Native, None)</li>
+        <pre style="font-size: 14px;" class="language-javascript line-numbers">
+          <code>
+ <\style>.foo { background: green; }<\/style>
+ (...)
+<\custom-element class="foo">
+  text
+ <\/custom-element>
+
+import { ViewEncapsulation } from 'angular2/core';
+@Component({
+  styles: [`.zippy {background: green;}`],
+  encapsulation: ViewEncapsulation.Emulated
+})
+        </code>
+      </pre>
       <ul>
       </ul>
     </section>
 
     <section class="slide">
-      <h2>Change detection</h2>
+      <h2>What is change detection?</h2>
+      <blockquote>
+        NG1 (Dirty checking): "I have no idea what changed, so I'll just check everything that may need updating."
+        <br><br>React (Virtual DOM): "I have no idea what changed so I'll just re-render everything and see what's different now."
+        <br><br>NG2 (Zones): "I know where and what've changed, so I'll refresh this component."
+      </blockquote>
+    </section>
+
+    <section class="slide">
+      <h2>NG2 CD structure</h2>
       <ul>
+        <li>One directional flow</li>
+        <li>Each component has got own change detector</li>
+        <li>...which is created in runtime (on app bootstrap)</li>
+        <li>Monomorphism (VM friendly)</li>
+        <li class="next">We can control change detection in each component individually</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>What can Zone do?</h2>
+      <ul>
+        <li>Fork</li>
+        <li>Add callback methods (on creation, before/after task)</li>
+        <li>Add monkey-patched hooks for asyncs</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Zone flow in ng2</h2>
+      <ul>
+        <li>NG2 attaches own zone's tasks (NgZone)</li>
+        <li>Subscribe for event which will occur after any Components fn call</li>
+        <li>Detect changes in entire application</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Quick votes part 2:</h2>
+        <ul>
+            <li>Who know what is immutability?</li>
+            <li>Who know what are observables?</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Change detection in NG2</h2>
+      <ul>
+        <li>Immutability</li>
+        <li>Observables</li>
       </ul>
     </section>
 
