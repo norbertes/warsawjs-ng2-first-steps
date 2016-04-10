@@ -8,6 +8,10 @@
     margin-bottom: 0;
 }
 
+.slide h4 {
+  font-size: 32px !important;
+}
+
 .slide.prism pre[class*="language-"] {
     background: none;
     margin: 0;
