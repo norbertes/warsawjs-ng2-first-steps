@@ -132,7 +132,7 @@
 
     <section class="slide prism">
       <h2>Getter</h2>
-      <pre style="font-size: 14px;" class="language-javascript line-numbers">
+      <pre style="font-size: 18px;" class="language-javascript line-numbers">
           <code>
 @Component({
   selector: 'play-button',
@@ -156,7 +156,7 @@ export class PlayButton {
 
     <section class="slide prism">
       <h2>Setter</h2>
-      <pre style="font-size: 14px;" class="language-javascript line-numbers">
+      <pre style="font-size: 18px;" class="language-javascript line-numbers">
           <code>
 @Component({
   selector: 'album-list',
@@ -183,7 +183,7 @@ export class PlayButton {
 
     <section class="slide prism">
       <h2>Pipe</h2>
-      <pre style="font-size: 14px;" class="language-javascript line-numbers">
+      <pre style="font-size: 18px;" class="language-javascript line-numbers">
           <code>
 import { Pipe } from 'angular2/core';
 
@@ -218,7 +218,7 @@ export class PhraseFilter {
 
     <section class="slide prism">
       <h2>RxJS</h2>
-      <pre style="font-size: 14px;" class="language-javascript line-numbers">
+      <pre style="font-size: 18px;" class="language-javascript line-numbers">
         <code>
 /* Get stock data somehow via WebSocket */
 const source = getAsyncStockData();
@@ -239,7 +239,7 @@ subscription.dispose();
 
     <section class="slide prism">
       <h2>Imports</h2>
-      <pre style="font-size: 14px;" class="language-javascript line-numbers">
+      <pre style="font-size: 18px;" class="language-javascript line-numbers">
         <code>
 import { Control } from 'angular2/common';
 import {
@@ -264,7 +264,7 @@ import { OrderBy } from './../shared/pipes/orderBy.ts';
 
     <section class="slide prism">
       <h2>Input/Output</h2>
-      <pre style="font-size: 14px;" class="language-javascript line-numbers">
+      <pre style="font-size: 18px;" class="language-javascript line-numbers">
         <code>
 <\navbar phrase="phraseVar" (filterPhrase)="updatePhrase($event)"><\/navbar>
 
@@ -314,7 +314,7 @@ export class Navbar {
       <h2>Shadow DOM</h2>
         <li>Better reusability of components</li>
         <li>ViewEncapsulation (Emulated, Native, None)</li>
-        <pre style="font-size: 14px;" class="language-javascript line-numbers">
+        <pre style="font-size: 18px;" class="language-javascript line-numbers">
           <code>
  <\style>.foo { background: green; }<\/style>
  (...)
@@ -382,7 +382,7 @@ import { ViewEncapsulation } from 'angular2/core';
 
     <section class="slide prism">
       <h2>Change detection in NG2</h2>
-      <pre style="font-size: 14px;" class="language-javascript line-numbers">
+      <pre style="font-size: 18px;" class="language-javascript line-numbers">
         <code>
 <user-profile user="userData"></user-profile>
 
@@ -400,7 +400,7 @@ class UserProfile {
 
     <section class="slide prism">
       <h2>Change detection in NG2</h2>
-      <pre style="font-size: 14px;" class="language-javascript line-numbers">
+      <pre style="font-size: 18px;" class="language-javascript line-numbers">
         <code>
 @Component({
   selector: 'user-profile'
@@ -446,6 +446,8 @@ class UserProfile {
           </ul>
         </li>
         <li class="next">Huuuge location refactor is (hopefully) comming</li>
+        <li class="next">NG2 makes it possible to use outside of a web browser</li>
+        <li class="next">NativeScript + NG2 = love</li>
       </ul>
     </section>
 
