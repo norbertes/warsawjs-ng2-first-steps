@@ -173,6 +173,27 @@ export class PlayButton {
     </section>
 
     <section class="slide prism">
+      <h2>Pipe</h2>
+      <pre style="font-size: 14px;" class="language-javascript line-numbers">
+          <code>
+import { Pipe } from 'angular2/core';
+
+@Pipe({
+  name: 'phraseFilter'
+})
+export class PhraseFilter {
+  transform(
+    collection: Object[],
+    [field = 'name', phrase = '']: [string, string]
+  ) {
+    return collection.filter( (el) => el[field].toLowerCase().indexOf(phrase) !== -1);
+  }
+}
+          </code>
+      </pre>
+    </section>
+
+    <section class="slide prism">
       <h2>Imports</h2>
       <pre style="font-size: 14px;" class="language-javascript line-numbers">
         <code>
@@ -236,6 +257,7 @@ export class Navbar {
         <li>All elements are just classes with annotations</li>
         <li>No more providers/services/factories/constants/values - just services</li>
         <li>Bootstraped service != component service</li>
+        <li>More modular approach (in application and dependencies)</li>
         <li class="next">Shadow DOM</li>
         <li class="next">Awesome change detection</li>
         <li class="next">Observables concept</li>
@@ -261,8 +283,6 @@ import { ViewEncapsulation } from 'angular2/core';
 })
         </code>
       </pre>
-      <ul>
-      </ul>
     </section>
 
     <section class="slide">
@@ -299,7 +319,9 @@ import { ViewEncapsulation } from 'angular2/core';
       <ul>
         <li>NG2 attaches own zone's tasks (NgZone)</li>
         <li>Subscribe for event which will occur after any Components fn call</li>
+        <li>Not allowed to have sideeffects (throws an error after 1st time) </li>
         <li>Detect changes in entire application</li>
+        <li class="next">...or better</li>
       </ul>
     </section>
 
@@ -314,8 +336,65 @@ import { ViewEncapsulation } from 'angular2/core';
     <section class="slide">
       <h2>Change detection in NG2</h2>
       <ul>
-        <li>Immutability</li>
-        <li>Observables</li>
+        <li>Primitives vs objects</li>
+        <li>CD checks reference first</li>
+        <li>e.g. Pipes must return new ref to trigger change</li>
+        <li>We can reduce number of checks</li>
+        <li>We can reduce moments when checks are made</li>
+      </ul>
+    </section>
+
+    <section class="slide prism">
+      <h2>Change detection in NG2</h2>
+      <pre style="font-size: 14px;" class="language-javascript line-numbers">
+        <code>
+<user-profile user="userData"></user-profile>
+
+@Component({
+  selector: 'user-profile'
+  template: `<\span>{{ user.first_name }} {{ user.last_name }}<\/span>`,
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+class UserProfile {
+  @Input() user;
+}
+        </code>
+      </pre>
+    </section>
+
+    <section class="slide prism">
+      <h2>Change detection in NG2</h2>
+      <pre style="font-size: 14px;" class="language-javascript line-numbers">
+        <code>
+@Component({
+  selector: 'user-profile'
+  template: `<\span>{{ profile_name }}<\/span>`,
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+class UserProfile {
+  @Input() changedProfileStream:Observable<\any>;
+  profile_name:string = '';
+
+  constructor(private cd: ChangeDetectorRef) {}
+
+  ngOnInit() {
+     this.changedProfileStream.subscribe((data) => {
+       this.profile_name = data.profile_name;
+       this.cd.markForCheck();
+     })
+   }
+}
+        </code>
+      </pre>
+    </section>
+    <section class="slide">
+      <h2>ChangeDetectionStrategy</h2>
+      <ul>
+        <li>CheckOnce</li>
+        <li>Checked</li>
+        <li>CheckAlways (default)</li>
+        <li>Detached</li>
+        <li>OnPush</li>
       </ul>
     </section>
 
