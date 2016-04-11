@@ -136,10 +136,10 @@
           <code>
 @Component({
   selector: 'play-button',
-  template: `<\button class="play-button"
+  template: `&lt;button class="play-button"
                       (click)="togglePlay()">
-                 <\audio src="..."><\/audio>
-             <\/button>`
+                &lt;audio src="...">&lt;/audio>
+            &lt;/button>`
 })
 export class PlayButton {
   constructor(private el: ElementRef) {}
@@ -162,10 +162,10 @@ export class PlayButton {
   selector: 'album-list',
   directives: [AlbumItem],
   pipes: [PhraseFilter],
-  template: `<\album-item *ngFor="#album of searchResults.albums.items
+  template: `&lt;album-item *ngFor="#album of searchResults.albums.items
                                   | phraseFilter:'name':filterPhrase"
                           [item]="album">
-             <\/album-item>`
+            &lt;/album-item>`
 })
 export class PlayButton {
   constructor(private searchService: SearchService) {}
@@ -266,16 +266,16 @@ import { OrderBy } from './../shared/pipes/orderBy.ts';
       <h2>Input/Output</h2>
       <pre style="font-size: 18px;" class="language-javascript line-numbers">
         <code>
-<\navbar phrase="phraseVar" (filterPhrase)="updatePhrase($event)"><\/navbar>
+&lt;navbar phrase="phraseVar" (filterPhrase)="updatePhrase($event)">&lt;/navbar>
 
 @Component({
   selector: 'navbar',
-  template: `<\div> {{phrase}} <\input #searchbox type="text" [ngFormControl]="term" /><\/div>`
+  template: `&lt;div> {{phrase}} &lt;input #searchbox type="text" [ngFormControl]="term" />&lt;/div>`
 })
 export class Navbar {
   term: Control = new Control();
   @Input() phrase: string;
-  @Output() filterPhrase: EventEmitter<\any> = new EventEmitter();
+  @Output() filterPhrase: EventEmitter&lt;any> = new EventEmitter();
   constructor() {
     this.term.valueChanges
              .debounceTime(500)
@@ -316,9 +316,9 @@ export class Navbar {
         <li>ViewEncapsulation (Emulated, Native, None)</li>
         <pre style="font-size: 18px;" class="language-javascript line-numbers">
           <code>
- <\style>.foo { background: green; }<\/style>
+&lt;style>.foo { background: green; }&lt;/style>
  (...)
-<\custom-element class="foo"> text <\/custom-element>
+&lt;custom-element class="foo"> text &lt;/custom-element>
 
 import { ViewEncapsulation } from 'angular2/core';
 @Component({
@@ -388,7 +388,7 @@ import { ViewEncapsulation } from 'angular2/core';
 
 @Component({
   selector: 'user-profile'
-  template: `<\span>{{ user.first_name }} {{ user.last_name }}<\/span>`,
+  template: `&lt;span>{{ user.first_name }} {{ user.last_name }}&lt;/span>`,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 class UserProfile {
@@ -404,11 +404,11 @@ class UserProfile {
         <code>
 @Component({
   selector: 'user-profile'
-  template: `<\span>{{ profile_name }}<\/span>`,
+  template: `&lt;span>{{ profile_name }}&lt;/span>`,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 class UserProfile {
-  @Input() changedProfileStream:Observable<\any>;
+  @Input() changedProfileStream:Observable&lt;any>;
   profile_name:string = '';
 
   constructor(private cd: ChangeDetectorRef) {}
@@ -438,7 +438,7 @@ class UserProfile {
       <h2>Additionals</h2>
       <ul>
         <li>Routing is awesome!</li>
-        <li>Short story about <\tr>
+        <li>Short story about &lt;tr>
           <ul>
             <li class="next">Documentation is outdated</li>
             <li class="next">...but code is awesomely detailed</li>
