@@ -270,7 +270,9 @@ import { OrderBy } from './../shared/pipes/orderBy.ts';
 
 @Component({
   selector: 'navbar',
-  template: `&lt;div> {{phrase}} &lt;input #searchbox type="text" [ngFormControl]="term" />&lt;/div>`
+  template: `&lt;div>
+    {{phrase}} &lt;input #searchbox type="text" [ngFormControl]="term" />
+  &lt;/div>`
 })
 export class Navbar {
   term: Control = new Control();
@@ -305,7 +307,7 @@ export class Navbar {
         <li>Bootstraped service != component service</li>
         <li>More modular approach (in application and dependencies)</li>
         <li class="next">Shadow DOM</li>
-        <li class="next">Awesome change detection</li>
+        <li class="next">Super-fast change detection</li>
         <li class="next">Observables concept</li>
       </ul>
     </section>
@@ -346,6 +348,14 @@ import { ViewEncapsulation } from 'angular2/core';
         <li>...which is created in runtime (on app bootstrap)</li>
         <li>Monomorphism (VM friendly)</li>
         <li class="next">We can control change detection in each component individually</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Y Zone?</h2>
+      <ul>
+        <li>Methods grouping</li>
+        <li>Identicate async calls</li>
       </ul>
     </section>
 
