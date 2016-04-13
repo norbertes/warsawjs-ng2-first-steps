@@ -131,6 +131,23 @@
     </section>
 
     <section class="slide prism">
+      <h2>Basic example</h2>
+      <pre style="font-size: 18px;" class="language-javascript line-numbers">
+          <code>
+import { Component } from 'angular2/core';
+
+@Component({
+  selector: 'say-hello',
+  template: `&lt;h2>Hello {{name}}!&lt;/h2>`
+})
+export class SayHello {
+  name: string = 'World';
+}
+          </code>
+      </pre>
+    </section>
+
+    <section class="slide prism">
       <h2>Getter</h2>
       <pre style="font-size: 18px;" class="language-javascript line-numbers">
           <code>
