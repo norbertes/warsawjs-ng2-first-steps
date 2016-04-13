@@ -162,7 +162,7 @@ export class PlayButton {
   selector: 'album-list',
   directives: [AlbumItem],
   pipes: [PhraseFilter],
-  template: `&lt;album-item *ngFor="#album of searchResults.albums.items
+  template: `&lt;album-item *ngFor="#album of searchResults?.albums.items
                                   | phraseFilter:'name':filterPhrase"
                           [item]="album">
             &lt;/album-item>`
